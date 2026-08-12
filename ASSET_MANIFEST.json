@@ -1,0 +1,52 @@
+{
+  "source": "User-supplied AFRICABET reference screenshot",
+  "important_note": "These PNGs are exact crops from the supplied screenshot, so they preserve the logos visible in that screenshot. They are raster reference assets, not official vector files.",
+  "folders": {
+    "teams": [
+      "teams/arsenal.png",
+      "teams/chelsea.png",
+      "teams/bayern-munich.png",
+      "teams/barcelona.png",
+      "teams/borussia-dortmund.png",
+      "teams/real-madrid.png"
+    ],
+    "competitions": [
+      "competitions/premier-league-card.png",
+      "competitions/serie-a-card.png",
+      "competitions/uefa-champions-league.png",
+      "competitions/serie-a.png",
+      "competitions/laliga.png",
+      "competitions/laliga-card.png",
+      "competitions/champions-league-card.png",
+      "competitions/bundesliga.png",
+      "competitions/bundesliga-card.png",
+      "competitions/premier-league.png"
+    ],
+    "ui": [
+      "ui/live-now-icon.png",
+      "ui/star-icon.png",
+      "ui/volleyball-icon.png",
+      "ui/sports-basketball-icon.png",
+      "ui/sports-esports-icon.png",
+      "ui/sports-virtuals-icon.png",
+      "ui/live-icon.png",
+      "ui/sports-tennis-icon.png",
+      "ui/esports-icon.png",
+      "ui/basketball-icon.png",
+      "ui/football-icon.png",
+      "ui/tennis-icon.png",
+      "ui/upcoming-icon.png",
+      "ui/home-icon.png",
+      "ui/sports-football-icon.png",
+      "ui/boost-icon.png",
+      "ui/hockey-icon.png"
+    ],
+    "sections": [
+      "sections/bet-slip-and-right-rail.png",
+      "sections/popular-leagues.png",
+      "sections/top-competitions.png",
+      "sections/welcome-bonus-banner.png",
+      "sections/live-matches-team-area.png"
+    ]
+  }
+}
