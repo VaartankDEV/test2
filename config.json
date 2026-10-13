@@ -1,0 +1,98 @@
+{
+  "_help": "Settings for the anime edit generator. Lines starting with _help are explanations only. Text values need \"double quotes\"; every line except the last in a group ends with a comma. Unsafe values are clamped automatically (see the log).",
+
+  "edit": {
+    "_help": "duration_seconds: length of the edit (ends on the nearest musical downbeat). music_file: \"auto\" = first song in music/, or a file name. music_start_seconds: \"auto\" = most energetic part incl. the drop, or a number. clip_order: \"hybrid\" = story order, but the drop and biggest hits get the best action moments; \"chronological\" = strict story order; \"best_moments\" = strongest action on the strongest beats. skip_start/end_seconds: ignore intros/credits of every clip. random_seed: change it to get a different variation of the same edit.",
+    "output_name": "anime_edit",
+    "duration_seconds": 30,
+    "music_file": "auto",
+    "music_start_seconds": "auto",
+    "clip_order": "hybrid",
+    "skip_start_seconds": 0,
+    "skip_end_seconds": 0,
+    "allow_clip_reuse": true,
+    "random_seed": 7
+  },
+
+  "output": {
+    "_help": "Final export. 1080x1920 = vertical 9:16 for TikTok/Shorts/Reels. fps: 60 (smoothest) or 30 (renders ~2x faster). framing: \"smart_crop\" (crop follows the action), \"center_crop\", \"blur_fill\" (whole picture on a blurred background), \"fit\" (black bars). video_crf: quality, lower = better/larger (16-22). x264_preset: \"fast\" renders quicker, \"slow\" compresses better. parallel_jobs: clips rendered at the same time (2-4).",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "framing": "smart_crop",
+    "smart_crop_strength": 0.6,
+    "video_crf": 18,
+    "x264_preset": "medium",
+    "audio_bitrate_kbps": 192,
+    "parallel_jobs": 2,
+    "keep_temp_files": false
+  },
+
+  "draft": {
+    "_help": "Used by preview_edit.py and create_edit.py --draft: low resolution so it renders fast.",
+    "width": 540,
+    "height": 960,
+    "fps": 30,
+    "video_crf": 26,
+    "x264_preset": "veryfast"
+  },
+
+  "preview": {
+    "_help": "seconds: preview length. section: \"drop\" (around the biggest beat drop) or \"start\".",
+    "seconds": 10,
+    "section": "drop"
+  },
+
+  "beats": {
+    "_help": "cut_every_beats: base cut frequency (1 = every beat, 2 = every 2nd beat...). beat_sensitivity 0-1: higher = more beats count as hard hits (more cuts on hits, more shakes/zooms). adaptive_cuts: cut faster in loud parts and slower in quiet parts. min/max_clip_seconds: limits for one clip. bpm_override: null = automatic, or the song's BPM if detection is wrong.",
+    "cut_every_beats": 2,
+    "beat_sensitivity": 0.6,
+    "adaptive_cuts": true,
+    "min_clip_seconds": 0.35,
+    "max_clip_seconds": 2.5,
+    "bpm_override": null
+  },
+
+  "effects": {
+    "_help": "All intensities are 0 (off) to 1 (max). velocity = slow-motion on the beat then speed-up into the next cut. shake = impact camera shake. zoom = punch-in zooms on hits. glow = soft bloom on bright areas. flash = white flash on the biggest hits; limited by max_flashes_per_second (max 3, keep it low for viewers sensitive to flashing). transition_rate: share of hits that get a whip-blur / chromatic hit / zoom-snap accent. slowmo_smoothing: \"none\" or \"blend\" (frame blending, softer slow-motion). color_grade: anime_punch, super_saiyan_gold, ninja_orange, cold_night, natural, none. contrast/saturation multiply the grade, brightness is added (-0.5..0.5).",
+    "velocity_intensity": 0.6,
+    "slowmo_smoothing": "none",
+    "shake_intensity": 0.5,
+    "zoom_intensity": 0.5,
+    "glow_strength": 0.4,
+    "flash_intensity": 0.35,
+    "max_flashes_per_second": 0.5,
+    "transition_rate": 0.3,
+    "color_grade": "anime_punch",
+    "contrast": 1.0,
+    "saturation": 1.0,
+    "brightness": 0.0,
+    "vignette": true
+  },
+
+  "audio": {
+    "_help": "target_lufs: loudness of the music (-14 suits TikTok/YouTube/Instagram; -16 is quieter). true_peak_db: peak ceiling, prevents clipping. output_gain_db: extra volume after normalisation (the limiter still prevents clipping). Fades in seconds.",
+    "target_lufs": -14,
+    "true_peak_db": -1.0,
+    "output_gain_db": 0,
+    "fade_in_seconds": 0.2,
+    "fade_out_seconds": 1.5
+  },
+
+  "analysis": {
+    "_help": "Motion analysis resolution. Higher motion_fps is more precise but slower for long episodes.",
+    "motion_fps": 10,
+    "motion_width": 128
+  },
+
+  "paths": {
+    "_help": "Folders are relative to this project folder. ffmpeg/ffprobe: \"auto\" = search tools/ffmpeg/bin then PATH, or a full path such as C:/ffmpeg/bin/ffmpeg.exe",
+    "input_dir": "input",
+    "music_dir": "music",
+    "output_dir": "output",
+    "work_dir": "work",
+    "log_dir": "logs",
+    "ffmpeg": "auto",
+    "ffprobe": "auto"
+  }
+}

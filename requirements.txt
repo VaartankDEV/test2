@@ -1,0 +1,2 @@
+# Only one Python package is needed. FFmpeg itself is a separate program (see README.md).
+numpy>=1.22

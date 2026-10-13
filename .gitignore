@@ -1,0 +1,11 @@
+# Your media and generated files stay on your computer, not in git
+input/*
+!input/PUT_ANIME_CLIPS_HERE.txt
+music/*
+!music/PUT_MUSIC_HERE.txt
+output/
+work/
+logs/
+tools/ffmpeg/
+__pycache__/
+*.pyc

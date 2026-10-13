@@ -1,0 +1,2 @@
+Put your anime clips here (MP4, MKV, MOV, WebM, AVI, ...).
+Sub-folders are fine. Files here are only read, never changed.

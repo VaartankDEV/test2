@@ -1,0 +1,3 @@
+Put your song here (MP3, WAV, FLAC, M4A, OGG, ...).
+If there are several songs, set edit.music_file in config.json.
+No song yet? Run: python scripts/make_demo_media.py
